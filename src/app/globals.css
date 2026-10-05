@@ -94,6 +94,8 @@
 }
 
 :root {
+  --brand-accent: #f47a00;
+  --brand-secondary: #16a6a3;
   --site-section-space: clamp(2.75rem, 4.5vw, 4rem);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -127,6 +129,45 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+}
+
+@keyframes theme-in {
+  from { opacity: 0; transform: translateY(8px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes industry-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-theme-in { animation: theme-in .2s ease-out both; }
+.animate-industry-in { animation: industry-in .28s ease-out both; }
+
+/* Keep existing brand-accent utilities in step with a visitor's chosen palette. */
+.text-orange-300 { color: color-mix(in srgb, var(--brand-accent) 58%, white); }
+.text-orange-400 { color: color-mix(in srgb, var(--brand-accent) 78%, white); }
+.text-orange-500,
+.text-orange-600,
+.text-orange-700 { color: var(--brand-accent); }
+.bg-orange-400,
+.bg-orange-500,
+.bg-orange-600 { background-color: var(--brand-accent); }
+.border-orange-300,
+.border-orange-400,
+.border-orange-500 { border-color: var(--brand-accent); }
+.hover\:text-orange-300:hover,
+.hover\:text-orange-500:hover,
+.hover\:text-orange-600:hover,
+.hover\:text-orange-700:hover { color: var(--brand-accent); }
+.hover\:bg-orange-500:hover,
+.hover\:bg-orange-600:hover { background-color: var(--brand-accent); }
+.hover\:border-orange-300:hover,
+.hover\:border-orange-400:hover,
+.hover\:border-orange-500:hover { border-color: var(--brand-accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-theme-in, .animate-industry-in { animation: none; }
 }
 
 .dark {
