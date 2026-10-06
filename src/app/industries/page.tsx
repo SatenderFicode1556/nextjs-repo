@@ -3,16 +3,17 @@ import Image from "next/image";
 import { ArrowDown, ArrowRight, Factory, GraduationCap, HeartPulse, Landmark, ShoppingBag, Truck } from "lucide-react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import healthcareImage from "../../../public/video/common/img1.jpg";
-import commerceImage from "../../../public/video/common/img2.jpg";
-import movementImage from "../../../public/video/common/img3.jpg";
+import peopleImage from "../../../public/video/common/img7.jpg";
+import commerceImage from "../../../public/video/common/img5.jpg";
+import operationsImage from "../../../public/video/common/img4.jpg";
+import industriesHeroImage from "../../../public/video/common/img6.jpg";
 
 export const metadata: Metadata = { title: "Industries | Ficode", description: "Digital products and technology solutions for healthcare, financial services, retail and more." };
 
 const groups = [
   {
-    image: healthcareImage,
-    imageAlt: "A thoughtful portrait in natural light",
+    image: peopleImage,
+    imageAlt: "A bright glass-and-iron conservatory filled with greenery",
     label: "01 / PEOPLE & CARE",
     title: "Technology should make life easier for the people who use it.",
     intro: "From essential health services to lifelong learning, we bring people and information closer together with secure, accessible digital experiences.",
@@ -23,7 +24,7 @@ const groups = [
   },
   {
     image: commerceImage,
-    imageAlt: "A portrait framed by sunlit leaves",
+    imageAlt: "People and a street food stand in a city at night",
     label: "02 / TRUST & COMMERCE",
     title: "Make every interaction feel clear, personal and dependable.",
     intro: "We help customer-facing organisations turn complex services into simple journeys, supported by platforms built to earn trust over time.",
@@ -33,8 +34,8 @@ const groups = [
     ],
   },
   {
-    image: movementImage,
-    imageAlt: "Boats on a quiet mountain lake",
+    image: operationsImage,
+    imageAlt: "A cyclist travelling along a leafy neighborhood street",
     label: "03 / OPERATIONS IN MOTION",
     title: "Give complex operations a clearer way forward.",
     intro: "From the factory floor to the final mile, connect operational data and modernise the systems that keep work moving.",
@@ -48,7 +49,7 @@ const groups = [
 export default function IndustriesPage() {
   return <><a href="#main-content" className="sr-only focus:not-sr-only">Skip to content</a><Navbar/><main id="main-content">
     <section className="relative isolate min-h-[560px] overflow-hidden bg-[#111719] text-white sm:min-h-[640px]">
-      <Image src={movementImage} alt="Mountain lake surrounded by forest and peaks" fill priority sizes="100vw" className="-z-20 object-cover object-[center_58%]" />
+      <Image src={industriesHeroImage} alt="A traveler looking across a mountain lake" fill priority sizes="100vw" className="-z-20 object-cover object-[center_58%]" />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(8,16,20,.88)_0%,rgba(8,16,20,.58)_56%,rgba(8,16,20,.12)_100%),linear-gradient(0deg,rgba(8,16,20,.48),transparent_55%)]" />
       <div className="site-container relative flex min-h-[560px] flex-col justify-center py-20 sm:min-h-[640px] sm:py-24">
         <div className="max-w-3xl">

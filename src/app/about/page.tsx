@@ -3,6 +3,7 @@ import { ArrowRight, Compass, HeartHandshake, Lightbulb, ShieldCheck } from "luc
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import InnerPageHero from "../../components/InnerPageHero";
+import aboutImage from "../../../public/video/common/img7.jpg";
 
 export const metadata: Metadata = { title: "About Ficode | Technology with purpose", description: "Meet Ficode: a technology partner for bespoke software, practical AI and cloud solutions." };
 
@@ -15,7 +16,7 @@ const values = [
 
 export default function AboutPage() {
   return <><a href="#main-content" className="sr-only focus:not-sr-only">Skip to content</a><Navbar/><main id="main-content">
-    <InnerPageHero eyebrow="A little about Ficode" title="Good technology" accent="starts with people." description="We help ambitious organisations make their next move with bespoke software, practical AI and cloud solutions shaped around the way they work." />
+    <InnerPageHero eyebrow="A little about Ficode" title="Good technology" accent="starts with people." description="We help ambitious organisations make their next move with bespoke software, practical AI and cloud solutions shaped around the way they work." image={aboutImage} imageAlt="Sunlight passing through a glass-and-iron conservatory" />
     <section id="story" className="site-container grid gap-10 py-20 sm:py-24 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
       <div><p className="section-eyebrow">Who we are</p><h2 className="section-heading mt-4 max-w-md text-4xl">Your partner for the next chapter.</h2></div>
       <div className="space-y-5 text-base leading-8 text-slate-600"><p>Ficode is a technology partner for organisations ready to move forward. We bring product thinking, engineering and delivery together to turn complex ideas into dependable digital services.</p><p>From a first discovery workshop to a long-term product team, we stay close to your goals and make sure every decision has a reason behind it.</p><a href="/contact" className="inline-flex items-center gap-2 pt-2 text-sm font-bold text-sky-700 hover:text-sky-900">Meet your team <ArrowRight size={16}/></a></div>

@@ -36,7 +36,7 @@ export default function Header() {
       <section className="relative isolate flex min-h-[min(820px,calc(100svh-72px))] items-center justify-center overflow-hidden bg-[#171819] text-white">
         <video className="absolute inset-0 h-full w-full object-cover" src="/video/header/ai.mp4" autoPlay muted loop playsInline aria-hidden="true" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(12,14,18,.88)_0%,rgba(12,14,18,.72)_48%,rgba(12,14,18,.58)_100%)]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_45%,rgba(255,132,0,.17),transparent_54%)]" />
+        <div className="hero-accent-glow pointer-events-none absolute inset-0" />
         <div ref={heroRef} className="site-container relative z-10 flex w-full flex-col items-center py-24 text-center sm:py-28 lg:py-32">
             <animated.div style={heroSprings[0]} className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-400/40 bg-black/25 px-4 py-2 text-xs font-semibold tracking-[0.16em] text-orange-300 backdrop-blur-sm"><span className="h-1.5 w-1.5 rounded-full bg-orange-400"/>YOUR PARTNER IN WHAT&apos;S NEXT</animated.div>
             <animated.h1 style={heroSprings[1]} className="hero-heading max-w-5xl uppercase">Modernise systems.<br/>Build AI. Create<br/><span className="font-serif text-orange-500 normal-case italic">What&apos;s next.</span></animated.h1>

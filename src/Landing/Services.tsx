@@ -76,8 +76,8 @@ export default function Services() {
               key={number}
               style={cardSprings[index]}
               className={`group relative flex min-h-[290px] flex-col overflow-hidden rounded-[1.5rem] border p-5 transition duration-500 hover:-translate-y-1.5 sm:p-6 ${featured
-                ? "border-[#34302c] bg-[linear-gradient(145deg,#171819_0%,#24211f_62%,#8d410d_100%)] text-white shadow-[0_20px_55px_rgba(83,48,21,.2)]"
-                : "border-slate-200/90 bg-[linear-gradient(145deg,#fff_0%,#fff_72%,#fff9f2_100%)] text-slate-900 shadow-[0_10px_35px_rgba(15,23,42,.045)] hover:border-[#34302c] hover:bg-[linear-gradient(145deg,#171819_0%,#24211f_62%,#8d410d_100%)] hover:text-white hover:shadow-[0_20px_55px_rgba(83,48,21,.2)] focus-within:border-[#34302c] focus-within:bg-[linear-gradient(145deg,#171819_0%,#24211f_62%,#8d410d_100%)] focus-within:text-white focus-within:shadow-[0_20px_55px_rgba(83,48,21,.2)]"
+                ? "border-[color-mix(in_srgb,var(--brand-accent)_45%,#171819)] bg-[linear-gradient(145deg,#171819_0%,#24211f_62%,var(--brand-accent-800)_100%)] text-white shadow-[0_20px_55px_rgba(83,48,21,.2)]"
+                : "border-slate-200/90 bg-[linear-gradient(145deg,#fff_0%,#fff_72%,var(--brand-accent-50)_100%)] text-slate-900 shadow-[0_10px_35px_rgba(15,23,42,.045)] hover:border-[var(--brand-accent)] hover:bg-[linear-gradient(145deg,#171819_0%,#24211f_62%,var(--brand-accent-800)_100%)] hover:text-white hover:shadow-[0_20px_55px_rgba(83,48,21,.2)] focus-within:border-[var(--brand-accent)] focus-within:bg-[linear-gradient(145deg,#171819_0%,#24211f_62%,var(--brand-accent-800)_100%)] focus-within:text-white focus-within:shadow-[0_20px_55px_rgba(83,48,21,.2)]"
               }`}
             >
               <div className={`pointer-events-none absolute inset-x-6 top-0 h-px ${featured ? "bg-gradient-to-r from-transparent via-orange-300/80 to-transparent" : "bg-gradient-to-r from-transparent via-orange-200 to-transparent opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100"}`} />

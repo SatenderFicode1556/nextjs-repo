@@ -98,7 +98,7 @@ export default function OurProcess() {
               style={cardSprings[index]}
               className={`group relative flex min-h-[230px] flex-col overflow-hidden rounded-[1.5rem] border p-5 transition duration-300 hover:-translate-y-1 sm:p-6 ${
                 featured
-                  ? "border-orange-400/45 bg-[linear-gradient(145deg,#8e400b_0%,#b6540e_55%,#e47717_100%)] text-white shadow-[0_22px_55px_rgba(177,82,14,.2)]"
+                  ? "border-orange-400/45 bg-[linear-gradient(145deg,var(--brand-accent-900)_0%,var(--brand-accent-800)_55%,var(--brand-accent-700)_100%)] text-white shadow-[0_22px_55px_rgba(177,82,14,.2)]"
                   : "border-white/10 bg-white/[.035] text-white hover:border-orange-300/30 hover:bg-white/[.06]"
               }`}
             >

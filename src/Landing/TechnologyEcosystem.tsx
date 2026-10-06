@@ -35,19 +35,19 @@ function EcosystemGraphic() {
         </div>
 
         <svg viewBox="0 0 500 90" className="mx-auto h-14 w-full max-w-[440px] sm:h-16" fill="none" aria-hidden="true">
-          <path className="ecosystem-flow" d="M85 5c0 50 165 22 165 80M250 5v80M415 5c0 50-165 22-165 80" stroke="#d8b38c" strokeWidth="1.5" strokeDasharray="4 6"/>
-          <circle cx="85" cy="5" r="3" fill="#e86a0a"/><circle cx="250" cy="5" r="3" fill="#e86a0a"/><circle cx="415" cy="5" r="3" fill="#e86a0a"/>
+          <path className="ecosystem-flow" d="M85 5c0 50 165 22 165 80M250 5v80M415 5c0 50-165 22-165 80" stroke="var(--brand-accent-200)" strokeWidth="1.5" strokeDasharray="4 6"/>
+          <circle cx="85" cy="5" r="3" fill="var(--brand-accent)"/><circle cx="250" cy="5" r="3" fill="var(--brand-accent)"/><circle cx="415" cy="5" r="3" fill="var(--brand-accent)"/>
         </svg>
 
-        <div className="ecosystem-core mx-auto flex max-w-[370px] items-center justify-center gap-3 rounded-2xl bg-[linear-gradient(110deg,#171819_0%,#292522_58%,#c45c0b_100%)] px-5 py-4 text-left text-white shadow-[0_16px_34px_rgba(91,52,18,.25)] ring-1 ring-white/20">
+        <div className="ecosystem-core mx-auto flex max-w-[370px] items-center justify-center gap-3 rounded-2xl bg-[linear-gradient(110deg,#171819_0%,#292522_58%,var(--brand-accent-700)_100%)] px-5 py-4 text-left text-white shadow-[0_16px_34px_rgba(91,52,18,.25)] ring-1 ring-white/20">
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/15 bg-white/10 text-orange-300"><Layers3 size={20}/></span>
           <span><span className="block text-sm font-semibold">One connected platform</span><span className="mt-0.5 block text-[10px] text-white/65">Designed around your business</span></span>
           <span className="ml-auto hidden h-2 w-2 shrink-0 rounded-full bg-orange-300 shadow-[0_0_12px_rgba(253,186,116,.9)] sm:block"/>
         </div>
 
         <svg viewBox="0 0 500 76" className="mx-auto h-12 w-full max-w-[440px] sm:h-14" fill="none" aria-hidden="true">
-          <path className="ecosystem-flow ecosystem-flow-reverse" d="M250 0v24M62 24h376M62 24v38m125-38v38m126-38v38m125-38v38" stroke="#d8b38c" strokeWidth="1.5" strokeDasharray="4 6"/>
-          <circle cx="62" cy="24" r="3" fill="#e86a0a"/><circle cx="187" cy="24" r="3" fill="#e86a0a"/><circle cx="313" cy="24" r="3" fill="#e86a0a"/><circle cx="438" cy="24" r="3" fill="#e86a0a"/>
+          <path className="ecosystem-flow ecosystem-flow-reverse" d="M250 0v24M62 24h376M62 24v38m125-38v38m126-38v38m125-38v38" stroke="var(--brand-accent-200)" strokeWidth="1.5" strokeDasharray="4 6"/>
+          <circle cx="62" cy="24" r="3" fill="var(--brand-accent)"/><circle cx="187" cy="24" r="3" fill="var(--brand-accent)"/><circle cx="313" cy="24" r="3" fill="var(--brand-accent)"/><circle cx="438" cy="24" r="3" fill="var(--brand-accent)"/>
         </svg>
 
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">

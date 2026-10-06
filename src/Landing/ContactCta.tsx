@@ -5,8 +5,8 @@ function ChallengeArtwork() {
     <div className="relative mx-auto aspect-[1.13/1] w-full max-w-[500px]" aria-hidden="true">
       <svg viewBox="0 0 500 430" className="absolute inset-0 h-full w-full" fill="none">
         <defs>
-          <linearGradient id="cta-swoosh" x1="32" y1="72" x2="271" y2="307" gradientUnits="userSpaceOnUse"><stop stopColor="#ffad4d"/><stop offset=".46" stopColor="#f47a00"/><stop offset="1" stopColor="#77320c"/></linearGradient>
-          <linearGradient id="cta-swoosh2" x1="260" y1="232" x2="490" y2="379" gradientUnits="userSpaceOnUse"><stop stopColor="#ffc780"/><stop offset="1" stopColor="#e86a0a"/></linearGradient>
+          <linearGradient id="cta-swoosh" x1="32" y1="72" x2="271" y2="307" gradientUnits="userSpaceOnUse"><stop stopColor="var(--brand-accent-300)"/><stop offset=".46" stopColor="var(--brand-accent)"/><stop offset="1" stopColor="var(--brand-accent-800)"/></linearGradient>
+          <linearGradient id="cta-swoosh2" x1="260" y1="232" x2="490" y2="379" gradientUnits="userSpaceOnUse"><stop stopColor="var(--brand-secondary-300)"/><stop offset="1" stopColor="var(--brand-secondary)"/></linearGradient>
         </defs>
         <path d="M-12 147C62 123 77 61 177 39c61-14 100 15 102 61 2 52-61 95-108 132-51 40-119 83-153 70-30-11-16-46 19-80 19-19 3-32-20-19-38 23-53 10-29-22 12-16 20-26 0-34Z" fill="url(#cta-swoosh)"/>
         <path d="M330 245c46 3 69-39 105-16 26 17 19 51 39 72 16 17 41 24 33 44-8 23-42 18-66 35-33 23-51 66-87 58-30-7-34-44-59-64-27-21-71-19-78-49-8-32 33-44 63-61 20-11 31-21 50-19Z" fill="url(#cta-swoosh2)"/>
@@ -35,7 +35,7 @@ function ChallengeArtwork() {
 
 export default function ContactCta() {
   return (
-    <section id="contact" className="site-section-spacing site-surface-muted overflow-hidden">
+    <section id="contact" className="site-section-spacing site-surface-muted overflow-hidden border-t">
       <div className="site-container grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
         <ChallengeArtwork />
         <div className="max-w-xl">
@@ -47,7 +47,7 @@ export default function ContactCta() {
             Tell us what is not working, what you want to modernise, or what you need to build. We will help define the next practical step, even if you are still shaping the brief.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <a href="mailto:sales@ficode.com?subject=Technology%20challenge" className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#f47a00] to-[#ff9b22] px-4 py-2.5 text-xs font-semibold text-white shadow-md shadow-orange-900/15 transition hover:-translate-y-0.5">
+            <a href="mailto:sales@ficode.com?subject=Technology%20challenge" className="group inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[var(--brand-accent)] px-4 py-2.5 text-xs font-semibold text-[var(--brand-on-accent)] shadow-md shadow-orange-900/15 transition hover:-translate-y-0.5">
               <Mail size={14}/> Discuss your technology challenge <ArrowRight size={14} className="transition-transform group-hover:translate-x-1"/>
             </a>
             <a href="#case-studies" className="inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-4 py-2.5 text-xs font-semibold text-slate-800 transition hover:border-blue-300 hover:text-blue-700">

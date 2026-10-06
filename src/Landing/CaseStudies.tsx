@@ -36,7 +36,7 @@ const caseStudies = [
 function CaseVisual({ kind }: { kind: string }) {
   if (kind === "cloud") {
     return (
-      <div className="relative h-[170px] overflow-hidden rounded-b-xl bg-gradient-to-br from-orange-400 via-[#c45c0b] to-[#211a15] p-4">
+      <div className="relative h-[170px] overflow-hidden rounded-b-xl bg-gradient-to-br from-orange-400 via-[var(--brand-accent-700)] to-[#211a15] p-4">
         <div className="absolute -right-8 -top-14 h-40 w-40 rounded-full bg-amber-200/45 blur-2xl" />
         <div className="absolute bottom-[-35px] left-8 h-28 w-28 rounded-full bg-amber-200/35 blur-2xl" />
         <div className="relative mx-auto flex h-full max-w-[280px] items-center justify-center">
@@ -64,7 +64,7 @@ function CaseVisual({ kind }: { kind: string }) {
           <div className="relative w-[48%] rounded-xl border border-white/70 bg-white/90 p-3 shadow-xl">
             <div className="flex items-center justify-between text-slate-600"><span className="text-[8px] font-semibold">Your wellbeing</span><HeartPulse size={13} className="text-rose-500"/></div>
             <div className="mt-3 flex items-end gap-1"><span className="text-lg font-bold text-slate-800">72</span><span className="mb-1 text-[8px] text-slate-500">today</span></div>
-            <svg viewBox="0 0 120 28" className="mt-1 w-full" fill="none"><path d="M1 19h18l7-12 9 17 10-12 7 7h17l8-13 8 13 9-6h25" stroke="#e86a0a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg viewBox="0 0 120 28" className="mt-1 w-full" fill="none"><path d="M1 19h18l7-12 9 17 10-12 7 7h17l8-13 8 13 9-6h25" stroke="var(--brand-accent-700)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </div>
           <div className="flex flex-col gap-2"><div className="rounded-lg border border-white/70 bg-white/90 p-2 text-indigo-700 shadow-lg"><HeartPulse size={17}/></div><div className="rounded-lg border border-white/70 bg-white/90 p-2 text-emerald-600 shadow-lg"><ShieldCheck size={17}/></div></div>
           <div className="absolute bottom-1 left-[22%] rounded-full border border-white/60 bg-white/75 px-2.5 py-1 text-[8px] font-semibold text-indigo-800 shadow">Care plan on track</div>
@@ -74,7 +74,7 @@ function CaseVisual({ kind }: { kind: string }) {
   }
 
   return (
-      <div className="relative h-[170px] overflow-hidden rounded-b-xl bg-gradient-to-br from-[#ffad5c] via-[#c75b12] to-[#2a1d19] p-4">
+      <div className="relative h-[170px] overflow-hidden rounded-b-xl bg-gradient-to-br from-orange-300 via-[var(--brand-accent-700)] to-[#2a1d19] p-4">
       <div className="absolute -right-5 -top-12 h-40 w-40 rounded-full bg-pink-300/50 blur-2xl" />
       <div className="relative mx-auto flex h-full max-w-[280px] items-end justify-center gap-1.5">
         {[38, 58, 43, 76, 54, 92, 68, 110, 83].map((height, i) => <div key={i} className="relative flex w-[10%] flex-col items-center rounded-t-md border border-orange-100/30 bg-gradient-to-b from-[#3a2618]/80 to-[#211a15]/95 shadow-lg" style={{height}}><span className="mt-2 h-1 w-1 rounded-full bg-orange-200/80"/><span className="mt-2 h-px w-3/4 bg-orange-200/40"/><span className="mt-2 h-4 w-3/4 rounded-sm border border-orange-100/30"/></div>)}
@@ -134,7 +134,7 @@ export default function CaseStudies() {
         </div>
 
         <div className="mt-8 flex justify-center">
-          <a href="#contact" className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#f47a00] to-[#ff9b22] px-5 py-3 text-xs font-semibold text-white shadow-md shadow-orange-900/15 transition hover:-translate-y-0.5">
+          <a href="#contact" className="group inline-flex items-center gap-2 rounded-full bg-[var(--brand-accent)] px-5 py-3 text-xs font-semibold text-[var(--brand-on-accent)] shadow-md shadow-orange-900/15 transition hover:-translate-y-0.5">
             Explore all case studies <ArrowRight size={15} className="transition-transform group-hover:translate-x-1"/>
           </a>
         </div>

@@ -37,7 +37,7 @@ export default function ContactPage() {
           <div className="site-container relative grid items-center gap-10 py-14 sm:py-16 lg:grid-cols-[1.05fr_.95fr] lg:gap-14 lg:py-20">
             <div className="max-w-2xl">
               <p className="section-eyebrow !text-cyan-300">Start a conversation</p>
-              <h1 className="mt-4 text-5xl font-semibold leading-[1.04] tracking-[-.055em] sm:text-6xl lg:text-[4.25rem]">Tell us what you&apos;re <span className="text-[#56b6e8]">thinking about.</span></h1>
+              <h1 className="mt-4 text-5xl font-semibold leading-[1.04] tracking-[-.055em] sm:text-6xl lg:text-[4.25rem]">Tell us what you&apos;re <span className="text-cyan-300">thinking about.</span></h1>
               <p className="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">A new product, a big technical question, or a project ready for a fresh start. Tell us what&apos;s on your mind and we&apos;ll help you find the next step.</p>
               <div className="mt-7 flex flex-wrap items-center gap-3 text-xs font-medium text-white/70"><span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[.06] px-3.5 py-2"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400"/> A real person will reply</span><span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[.06] px-3.5 py-2"><Clock3 size={14} className="text-cyan-300"/> Usually within one working day</span></div>
             </div>

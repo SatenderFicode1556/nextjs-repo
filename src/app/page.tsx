@@ -37,8 +37,8 @@ export default function Home() {
         <MotionReveal><CaseStudies /></MotionReveal>
         <MotionReveal><ClientExperience /></MotionReveal>
         <MotionReveal><VideoTestomonial /></MotionReveal>
-        <MotionReveal><Faq /></MotionReveal>
         <MotionReveal><ContactCta /></MotionReveal>
+        <MotionReveal><Faq /></MotionReveal>
       </main>
       <MotionReveal><Footer /></MotionReveal>
     </div>

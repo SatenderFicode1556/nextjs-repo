@@ -36,7 +36,7 @@ export default function AwsCapabilities() {
   return (
     <section id="aws-capabilities" className="site-section-spacing bg-white">
       <div className="site-container">
-        <div ref={panelRef} className="relative isolate overflow-hidden rounded-[2rem] bg-[linear-gradient(115deg,#171819_0%,#24211e_62%,#67350f_100%)] px-6 py-9 text-white shadow-[0_28px_75px_rgba(46,28,13,.18)] sm:px-9 sm:py-11 lg:px-12 lg:py-14">
+        <div ref={panelRef} className="relative isolate overflow-hidden rounded-[2rem] bg-[linear-gradient(115deg,#171819_0%,#24211e_62%,var(--brand-accent-900)_100%)] px-6 py-9 text-white shadow-[0_28px_75px_rgba(46,28,13,.18)] sm:px-9 sm:py-11 lg:px-12 lg:py-14">
           <div className="pointer-events-none absolute -right-20 -top-28 h-[28rem] w-[28rem] rounded-full bg-orange-500/20 blur-[100px]" />
           <div className="pointer-events-none absolute -bottom-36 left-[20%] h-72 w-72 rounded-full bg-amber-500/10 blur-[90px]" />
           <div className="pointer-events-none absolute inset-0 opacity-[.08] [background-image:linear-gradient(rgba(255,255,255,.3)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.3)_1px,transparent_1px)] [background-size:52px_52px] [mask-image:linear-gradient(90deg,transparent,black)]" />

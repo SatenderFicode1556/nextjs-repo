@@ -26,20 +26,20 @@ function AiNetworkArtwork() {
     <div className="relative mx-auto flex h-[270px] w-full max-w-[420px] items-center justify-center sm:h-[320px]" aria-hidden="true">
       <div className="absolute inset-[16%] rounded-full bg-orange-400/25 blur-[50px]" />
       <svg viewBox="0 0 420 320" className="absolute inset-0 h-full w-full" fill="none">
-        <path className="ai-network-flow" d="m65 208 81-48 76 42 75-75 59 36M93 253l86-35 67 33 87-69M124 123l51 42 73-68 60 55M77 179l68 25 56-53 82 32 71-47" stroke="#ffb45f" strokeOpacity=".72" strokeWidth="1.5" strokeDasharray="3 6" />
-        <path className="ai-network-flow ai-network-flow-reverse" d="m111 217 63 28 61-36 49 27 61-35M149 98l27 67m73-68 7 69m64-15-27 68" stroke="#ffe0bd" strokeOpacity=".58" strokeWidth="1.4" strokeDasharray="3 7" />
-        <circle cx="65" cy="208" r="4" fill="#fff1df"/><circle cx="356" cy="163" r="4" fill="#fff1df"/><circle cx="93" cy="253" r="3" fill="#ff9b22"/><circle cx="333" cy="182" r="3" fill="#ff9b22"/><circle cx="149" cy="98" r="3" fill="#ff9b22"/><circle cx="249" cy="97" r="3" fill="#ff9b22"/>
+        <path className="ai-network-flow" d="m65 208 81-48 76 42 75-75 59 36M93 253l86-35 67 33 87-69M124 123l51 42 73-68 60 55M77 179l68 25 56-53 82 32 71-47" stroke="var(--brand-accent-300)" strokeOpacity=".72" strokeWidth="1.5" strokeDasharray="3 6" />
+        <path className="ai-network-flow ai-network-flow-reverse" d="m111 217 63 28 61-36 49 27 61-35M149 98l27 67m73-68 7 69m64-15-27 68" stroke="var(--brand-accent-200)" strokeOpacity=".7" strokeWidth="1.4" strokeDasharray="3 7" />
+        <circle cx="65" cy="208" r="4" fill="var(--brand-accent-100)"/><circle cx="356" cy="163" r="4" fill="var(--brand-accent-100)"/><circle cx="93" cy="253" r="3" fill="var(--brand-accent-400)"/><circle cx="333" cy="182" r="3" fill="var(--brand-accent-400)"/><circle cx="149" cy="98" r="3" fill="var(--brand-accent-400)"/><circle cx="249" cy="97" r="3" fill="var(--brand-accent-400)"/>
       </svg>
 
       <div className="absolute bottom-[15%] left-1/2 h-8 w-52 -translate-x-1/2 rounded-[50%] border border-orange-200/60 bg-orange-300/10 shadow-[0_0_35px_rgba(255,156,62,.3)]" />
       <div className="absolute bottom-[22%] left-1/2 h-6 w-40 -translate-x-1/2 rounded-[50%] border border-orange-100/70 bg-orange-300/20" />
       <div className="absolute bottom-[27%] left-1/2 h-16 w-28 -translate-x-1/2 bg-gradient-to-t from-orange-400/25 to-transparent [clip-path:polygon(50%_0,100%_100%,0_100%)]" />
 
-      <div className="ai-core-float relative z-10 -mt-5 flex h-36 w-28 flex-col items-center rounded-[2.5rem_2.5rem_1.7rem_1.7rem] border border-orange-100/80 bg-gradient-to-br from-white via-[#ffd6a6] to-[#be5b0b] p-2 shadow-[0_0_35px_rgba(244,122,0,.55),inset_0_0_20px_rgba(255,255,255,.7)] sm:h-40 sm:w-32">
+        <div className="ai-core-float relative z-10 -mt-5 flex h-36 w-28 flex-col items-center rounded-[2.5rem_2.5rem_1.7rem_1.7rem] border border-orange-100/80 bg-gradient-to-br from-white via-orange-100 to-orange-700 p-2 shadow-[0_0_35px_rgba(244,122,0,.55),inset_0_0_20px_rgba(255,255,255,.7)] sm:h-40 sm:w-32">
         <div className="absolute -left-3 top-8 h-8 w-4 rounded-full border border-orange-100 bg-orange-400 shadow-[0_0_14px_rgba(251,146,60,.8)]" />
         <div className="absolute -right-3 top-8 h-8 w-4 rounded-full border border-orange-100 bg-orange-400 shadow-[0_0_14px_rgba(251,146,60,.8)]" />
-        <div className="mt-5 flex h-16 w-20 items-center justify-center rounded-2xl border border-white/80 bg-gradient-to-br from-[#fff8ed] to-[#ffbd6f] shadow-inner sm:h-[4.5rem] sm:w-24">
-          <BrainCircuit size={37} strokeWidth={1.5} className="text-[#8a3d0a] drop-shadow-[0_0_8px_rgba(255,255,255,.8)]" />
+        <div className="mt-5 flex h-16 w-20 items-center justify-center rounded-2xl border border-white/80 bg-gradient-to-br from-orange-50 to-orange-300 shadow-inner sm:h-[4.5rem] sm:w-24">
+          <BrainCircuit size={37} strokeWidth={1.5} className="text-orange-800 drop-shadow-[0_0_8px_rgba(255,255,255,.8)]" />
         </div>
         <div className="mt-3 h-1.5 w-12 rounded-full bg-white/90 shadow-[0_0_12px_rgba(255,255,255,.9)]" />
         <div className="mt-2 flex gap-1.5"><span className="h-1 w-1 rounded-full bg-orange-100"/><span className="h-1 w-1 rounded-full bg-orange-100"/><span className="h-1 w-1 rounded-full bg-orange-100"/></div>
@@ -76,7 +76,7 @@ export default function AiDevelopment() {
   return (
     <section id="ai-development" className="site-section-spacing site-surface-muted">
       <div className="site-container">
-        <div className="relative isolate overflow-hidden rounded-[2rem] bg-[linear-gradient(125deg,#171819_0%,#24211e_55%,#733a12_100%)] px-6 py-9 text-white shadow-[0_28px_75px_rgba(46,28,13,.2)] sm:px-9 sm:py-11 lg:px-12 lg:py-14">
+        <div className="relative isolate overflow-hidden rounded-[2rem] bg-[linear-gradient(125deg,#171819_0%,#24211e_55%,var(--brand-accent-900)_100%)] px-6 py-9 text-white shadow-[0_28px_75px_rgba(46,28,13,.2)] sm:px-9 sm:py-11 lg:px-12 lg:py-14">
           <div className="pointer-events-none absolute right-0 top-0 z-0 h-96 w-96 rounded-full bg-orange-400/20 blur-[100px]" />
           <div className="pointer-events-none absolute bottom-0 left-1/4 z-0 h-80 w-80 rounded-full bg-amber-600/15 blur-[90px]" />
           <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(115deg,transparent_25%,rgba(255,255,255,.025)_25.2%,transparent_25.5%,transparent_72%,rgba(255,255,255,.025)_72.2%,transparent_72.5%)]" />
