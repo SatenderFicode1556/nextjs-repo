@@ -7,7 +7,6 @@ import Services from "../Landing/Services";
 import TechnologyEcosystem from "../Landing/TechnologyEcosystem";
 import IndustrySolutions from "../Landing/IndustrySolutions";
 import AiDevelopment from "../Landing/AiDevelopment";
-import AwsCapabilities from "../Landing/AwsCapabilities";
 import OurProcess from "../Landing/OurProcess";
 import AboutFicode from "../Landing/AboutFicode";
 import ClientNetwork from "../Landing/ClientNetwork";
@@ -16,6 +15,7 @@ import ClientExperience from "../Landing/ClientExperience";
 import Faq from "../Landing/Faq";
 import ContactCta from "../Landing/ContactCta";
 import VideoTestomonial from "../Landing/VideoTestomonial";
+import InTheNews from "../Landing/InTheNews";
 
 export default function Home() {
   return (
@@ -30,13 +30,13 @@ export default function Home() {
         <MotionReveal><TechnologyEcosystem /></MotionReveal>
         <MotionReveal><IndustrySolutions /></MotionReveal>
         <MotionReveal><AiDevelopment /></MotionReveal>
-        <MotionReveal><AwsCapabilities /></MotionReveal>
-        <MotionReveal><OurProcess /></MotionReveal>
         <MotionReveal><AboutFicode /></MotionReveal>
+        <MotionReveal><OurProcess /></MotionReveal>
         <MotionReveal><ClientNetwork /></MotionReveal>
         <MotionReveal><CaseStudies /></MotionReveal>
         <MotionReveal><ClientExperience /></MotionReveal>
         <MotionReveal><VideoTestomonial /></MotionReveal>
+        <MotionReveal><InTheNews /></MotionReveal>
         <MotionReveal><ContactCta /></MotionReveal>
         <MotionReveal><Faq /></MotionReveal>
       </main>

@@ -1,22 +1,15 @@
 "use client";
 
 import { animated, useInView, useReducedMotion, useTrail } from "@react-spring/web";
-import {
-  Building2,
-  Cpu,
-  HeartPulse,
-  Landmark,
-  Plane,
-  ShoppingBag,
-} from "lucide-react";
+import Image from "next/image";
 
 const industries = [
-  { label: "Built environment", icon: Building2 },
-  { label: "Financial services", icon: Landmark },
-  { label: "Health & care", icon: HeartPulse },
-  { label: "Retail & commerce", icon: ShoppingBag },
-  { label: "Travel & leisure", icon: Plane },
-  { label: "Technology", icon: Cpu },
+  { label: "Built environment", image: "/video/common/img4.jpg", position: "center 48%" },
+  { label: "Financial services", image: "/video/common/img1.jpg", position: "center 38%" },
+  { label: "Health & care", image: "/video/common/img2.jpg", position: "center 35%" },
+  { label: "Retail & commerce", image: "/video/common/img5.jpg", position: "center 60%" },
+  { label: "Travel & leisure", image: "/video/common/img6.jpg", position: "center 53%" },
+  { label: "Technology", image: "/video/common/img7.jpg", position: "center 43%" },
 ];
 
 export default function ClientNetwork() {
@@ -60,14 +53,12 @@ export default function ClientNetwork() {
         </div>
 
         <ul ref={industriesRef} className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
-          {industries.map(({ label, icon: Icon }, index) => (
-            <animated.li key={label} style={industrySprings[index]} className="group relative flex min-h-[132px] flex-col justify-between overflow-hidden rounded-2xl border border-white/90 bg-white/75 p-4 shadow-[0_7px_24px_rgba(15,23,42,.035)] transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:bg-white hover:shadow-[0_16px_32px_rgba(88,52,23,.09)]">
-              <div className="flex items-start justify-between">
-                <span className="grid h-9 w-9 place-items-center rounded-xl border border-orange-100 bg-orange-50 text-orange-700 transition duration-300 group-hover:rotate-[-5deg] group-hover:bg-orange-100"><Icon size={17} strokeWidth={1.7}/></span>
-                <span className="text-[9px] font-semibold tracking-[.16em] text-slate-300 transition-colors group-hover:text-orange-500">0{index + 1}</span>
-              </div>
-              <span className="mt-5 text-xs leading-4 font-semibold text-slate-700 transition-colors group-hover:text-slate-950">{label}</span>
-              <span className="absolute bottom-0 left-4 right-4 h-px origin-left scale-x-0 bg-gradient-to-r from-orange-500 to-amber-300 transition-transform duration-300 group-hover:scale-x-100" />
+          {industries.map(({ label, image, position }, index) => (
+            <animated.li key={label} style={industrySprings[index]} className="group relative isolate aspect-[1.22] min-h-[140px] overflow-hidden rounded-2xl bg-slate-900 shadow-[0_12px_32px_rgba(15,23,42,.12)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_20px_42px_rgba(15,23,42,.2)] sm:aspect-[1.15] lg:aspect-[1.22]">
+              <Image src={image} alt="" fill sizes="(max-width: 639px) 46vw, (max-width: 1023px) 30vw, 16vw" className="object-cover transition duration-700 group-hover:scale-110" style={{ objectPosition: position }} />
+              <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/15 to-slate-950/10 transition-colors duration-300 group-hover:from-slate-950/95 group-hover:via-slate-950/25" />
+              <span className="absolute left-3 top-3 rounded-full border border-white/25 bg-black/25 px-2.5 py-1 text-[9px] font-semibold tracking-[.12em] text-white/85 backdrop-blur-sm">0{index + 1}</span>
+              <span className="absolute inset-x-0 bottom-0 p-3.5 text-xs font-semibold leading-snug text-white drop-shadow sm:p-4 sm:text-sm">{label}</span>
             </animated.li>
           ))}
         </ul>

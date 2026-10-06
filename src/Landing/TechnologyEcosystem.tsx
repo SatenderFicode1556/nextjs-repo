@@ -17,20 +17,20 @@ const platforms = [
 
 function EcosystemGraphic() {
   return (
-    <div role="img" aria-label="Diagram showing customers, teams and partners connected through software, data, AI and cloud" className="ecosystem-reveal relative mx-auto w-full max-w-[600px] rounded-[2rem] border border-white/80 bg-[linear-gradient(145deg,#fff_0%,#fffaf3_55%,#f7eee4_100%)] p-5 shadow-[0_28px_80px_rgba(37,28,19,.12)] ring-1 ring-black/[.03] sm:p-8">
+    <div role="img" aria-label="Diagram showing customers, teams and partners connected through software, data, AI and cloud" className="ecosystem-reveal relative mx-auto w-full max-w-[600px] rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,#191b1e_0%,#121315_70%,#191512_100%)] p-5 shadow-[0_32px_90px_rgba(0,0,0,.4)] ring-1 ring-white/[.04] sm:rounded-[2.25rem] sm:p-8">
       <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
-        <div className="absolute -right-10 -top-16 h-48 w-48 rounded-full bg-orange-200/55 blur-3xl" />
-        <div className="absolute -bottom-20 -left-12 h-48 w-48 rounded-full bg-amber-200/55 blur-3xl" />
+        <div className="absolute -right-10 -top-16 h-48 w-48 rounded-full bg-orange-500/20 blur-3xl" />
+        <div className="absolute -bottom-20 -left-12 h-48 w-48 rounded-full bg-amber-500/10 blur-3xl" />
       </div>
       <div className="relative">
-        <div className="mb-5 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[.18em] text-slate-400">
+        <div className="mb-5 flex items-center justify-between text-[10px] font-semibold uppercase tracking-[.18em] text-white/45">
           <span>Connected by design</span>
-          <span className="inline-flex items-center gap-1.5 text-emerald-700"><span className="h-1.5 w-1.5 rounded-full bg-emerald-500"/>In sync</span>
+          <span className="inline-flex items-center gap-1.5 text-emerald-300"><span className="h-1.5 w-1.5 rounded-full bg-emerald-400"/>In sync</span>
         </div>
         <div className="mx-auto flex max-w-[390px] justify-center gap-2 sm:gap-3">
           {["Customers", "Teams", "Partners"].map((name, index) => {
             const Icon = index === 1 ? Layers3 : UsersRound;
-            return <div key={name} className="ecosystem-node inline-flex items-center gap-1.5 rounded-full border border-white/90 bg-white/90 px-2.5 py-2 text-[10px] font-medium text-slate-600 shadow-[0_4px_14px_rgba(15,23,42,.06)] sm:px-3 sm:text-xs" style={{ animationDelay: `${index * 140}ms` }}><Icon size={13} className="text-orange-600"/>{name}</div>;
+            return <div key={name} className="ecosystem-node inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[.07] px-2.5 py-2 text-[10px] font-medium text-white/80 shadow-lg shadow-black/10 backdrop-blur sm:px-3 sm:text-xs" style={{ animationDelay: `${index * 140}ms` }}><Icon size={13} className="text-orange-300"/>{name}</div>;
           })}
         </div>
 
@@ -52,9 +52,9 @@ function EcosystemGraphic() {
 
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
           {platforms.map(({ label, icon: Icon }, index) => (
-            <div key={label} className="ecosystem-node group flex flex-col items-center gap-2 rounded-xl border border-white/90 bg-white/90 px-2 py-3 text-center shadow-[0_5px_18px_rgba(15,23,42,.06)] transition duration-300 hover:-translate-y-1 hover:border-orange-200 hover:shadow-[0_12px_24px_rgba(194,92,11,.12)]" style={{ animationDelay: `${index * 120}ms` }}>
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-orange-50 text-orange-700 transition-colors group-hover:bg-orange-100"><Icon size={17}/></span>
-              <span className="text-[10px] font-semibold text-slate-700 sm:text-xs">{label}</span>
+          <div key={label} className="ecosystem-node group flex flex-col items-center gap-2 rounded-xl border border-white/[.08] bg-white/[.055] px-2 py-3 text-center shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-orange-300/30 hover:bg-white/[.09] hover:shadow-[0_12px_24px_rgba(194,92,11,.12)]" style={{ animationDelay: `${index * 120}ms` }}>
+              <span className="grid h-9 w-9 place-items-center rounded-xl bg-orange-400/10 text-orange-300 transition-colors group-hover:bg-orange-400/20"><Icon size={17}/></span>
+              <span className="text-[10px] font-semibold text-white/80 sm:text-xs">{label}</span>
             </div>
           ))}
         </div>
@@ -65,20 +65,21 @@ function EcosystemGraphic() {
 
 export default function TechnologyEcosystem() {
   return (
-    <section id="technology-ecosystem" className="site-section-spacing site-surface-muted overflow-hidden">
+    <section id="technology-ecosystem" className="site-section-spacing relative isolate overflow-hidden bg-[#0d0e10] text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,.018),transparent_55%)]" />
       <div className="site-container grid items-center gap-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-16">
-        <div className="max-w-xl">
-          <p className="section-eyebrow">A CONNECTED APPROACH</p>
-          <h2 className="section-heading mt-3">
-            Technology works better when <span className="bg-gradient-to-r from-orange-600 to-amber-500 bg-clip-text text-transparent">everything works together.</span>
+        <div className="relative max-w-xl">
+          <p className="section-eyebrow !text-orange-300">A CONNECTED APPROACH</p>
+          <h2 className="section-heading mt-3 !text-white">
+            Technology works better when <span className="bg-gradient-to-r from-orange-300 to-amber-100 bg-clip-text text-transparent">everything works together.</span>
           </h2>
-          <p className="section-description mt-4">
+          <p className="section-description mt-4 !text-white/60">
             A new product, an AI workflow or a move to the cloud should strengthen the whole business. We connect the systems, data and people behind each solution so progress carries through.
           </p>
-          <ul className="mt-5 space-y-3 text-sm text-slate-600">
-            {["Start with the outcomes your teams need", "Connect new capabilities to existing systems", "Build a foundation you can keep evolving"].map((item, index) => <li key={item} className="flex items-start gap-3"><span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-orange-100 text-[10px] font-bold text-orange-700">0{index + 1}</span><span className="pt-0.5">{item}</span></li>)}
+          <ul className="mt-6 space-y-3.5 text-sm text-white/75">
+            {["Start with the outcomes your teams need", "Connect new capabilities to existing systems", "Build a foundation you can keep evolving"].map((item, index) => <li key={item} className="flex items-start gap-3"><span className="grid h-5 w-5 shrink-0 place-items-center rounded-full border border-orange-300/20 bg-orange-300/10 text-[9px] font-bold text-orange-200">0{index + 1}</span><span className="pt-0.5">{item}</span></li>)}
           </ul>
-          <a href="#case-studies" className="group mt-7 inline-flex min-h-11 items-center gap-2 rounded-full bg-[#171819] px-5 text-sm font-semibold text-white transition hover:bg-orange-600">See how we connect the dots <ArrowRight size={15} className="transition-transform group-hover:translate-x-1"/></a>
+          <a href="#case-studies" className="group mt-8 inline-flex min-h-12 items-center gap-2 rounded-full bg-orange-300 px-5 text-sm font-semibold text-[#171819] shadow-[0_10px_30px_rgba(249,115,22,.14)] transition hover:-translate-y-0.5 hover:bg-orange-200">See how we connect the dots <ArrowRight size={15} className="transition-transform group-hover:translate-x-1"/></a>
         </div>
         <EcosystemGraphic />
       </div>
