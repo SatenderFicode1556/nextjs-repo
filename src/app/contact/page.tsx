@@ -31,7 +31,7 @@ export default function ContactPage() {
     <>
       <a href="#main-content" className="sr-only focus:not-sr-only">Skip to content</a>
       <Navbar />
-      <main id="main-content" className="overflow-hidden bg-[#f4f7fa]">
+      <main id="main-content" className="site-surface-muted overflow-hidden">
         <section className="relative isolate overflow-hidden bg-[#09152d] text-white">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_78%_20%,rgba(46,144,206,.26),transparent_34%),radial-gradient(ellipse_at_5%_100%,rgba(24,91,150,.34),transparent_43%)]" />
           <div className="site-container relative grid items-center gap-10 py-14 sm:py-16 lg:grid-cols-[1.05fr_.95fr] lg:gap-14 lg:py-20">

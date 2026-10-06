@@ -24,7 +24,7 @@ export default function IndustrySolutions() {
   const ActiveIcon = industry.icon;
 
   return (
-    <section id="industries" className="site-section-spacing relative isolate overflow-hidden bg-[#f8f8f7]">
+    <section id="industries" className="site-section-spacing site-surface-muted relative isolate overflow-hidden">
       <div className="pointer-events-none absolute -right-36 top-0 h-[28rem] w-[28rem] rounded-full bg-[color-mix(in_srgb,var(--brand-accent)_10%,transparent)] blur-3xl" />
       <div className="site-container relative">
         <div className="mx-auto mb-9 max-w-3xl text-center sm:mb-12">

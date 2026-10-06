@@ -98,6 +98,11 @@
   --brand-secondary: #16a6a3;
   --brand-on-accent: #111827;
   --brand-on-secondary: #111827;
+  --site-surface: #ffffff;
+  --site-surface-muted: #f6f5f2;
+  --site-surface-dark: #171819;
+  --site-ink: #111827;
+  --site-ink-muted: #475569;
   --brand-accent-ink: color-mix(in srgb, var(--brand-accent) 66%, #111827);
   --brand-secondary-ink: color-mix(in srgb, var(--brand-secondary) 66%, #111827);
   --brand-accent-soft: color-mix(in srgb, var(--brand-accent) 8%, white);
@@ -186,7 +191,8 @@
     radial-gradient(ellipse at 10% 100%, color-mix(in srgb, var(--brand-accent) 18%, transparent), transparent 45%);
 }
 .hero-accent-glow {
-  background: radial-gradient(ellipse at 50% 45%, color-mix(in srgb, var(--brand-accent) 17%, transparent), transparent 54%);
+  background: radial-gradient(ellipse at 42% 42%, color-mix(in srgb, var(--brand-accent) 17%, transparent), transparent 54%),
+    radial-gradient(ellipse at 82% 78%, color-mix(in srgb, var(--brand-secondary) 11%, transparent), transparent 48%);
 }
 
 /* Keep brand text legible while filled accents use the selected base color. */
@@ -259,8 +265,10 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--site-surface);
+    color: var(--site-ink);
     font-family: var(--font-geist-sans), Arial, sans-serif;
+    text-rendering: optimizeLegibility;
   }
   html {
     @apply font-sans;
@@ -273,6 +281,11 @@
   summary:focus-visible {
     outline: 2px solid var(--brand-accent);
     outline-offset: 3px;
+  }
+
+  ::selection {
+    color: var(--brand-on-accent);
+    background: color-mix(in srgb, var(--brand-accent) 32%, white);
   }
 }
 
@@ -343,6 +356,10 @@
 .video-reel-track {
   animation: client-video-reel-scroll 72s linear infinite;
   will-change: transform;
+}
+
+.video-reel-track-reverse {
+  animation-direction: reverse;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -456,7 +473,10 @@
   }
 
   .site-surface-muted {
-    background-color: #f4f2ef;
+    background-color: var(--site-surface-muted);
+    background-image:
+      radial-gradient(ellipse at 0% 0%, color-mix(in srgb, var(--brand-accent) 4%, transparent), transparent 38%),
+      radial-gradient(ellipse at 100% 100%, color-mix(in srgb, var(--brand-secondary) 3%, transparent), transparent 42%);
   }
 
   .section-eyebrow {
@@ -473,13 +493,13 @@
     line-height: 1.15;
     font-weight: 600;
     letter-spacing: -0.04em;
-    color: var(--color-slate-900);
+    color: var(--site-ink);
   }
 
   .section-description {
     font-size: 1rem;
     line-height: 1.65;
-    color: var(--color-slate-600);
+    color: var(--site-ink-muted);
   }
 
   .card-heading {

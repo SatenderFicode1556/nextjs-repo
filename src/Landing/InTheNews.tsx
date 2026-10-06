@@ -47,7 +47,7 @@ export default function InTheNews() {
   const [featured, ...stories] = newsItems;
 
   return (
-    <section aria-labelledby="in-the-news-title" className="site-section-spacing relative isolate overflow-hidden bg-[#f4f2ef]">
+    <section aria-labelledby="in-the-news-title" className="site-section-spacing site-surface-muted relative isolate overflow-hidden">
       <div aria-hidden="true" className="pointer-events-none absolute -right-40 -top-36 h-[30rem] w-[30rem] rounded-full bg-orange-200/25 blur-[100px]" />
       <div className="site-container relative z-10">
         <div className="mb-8 flex flex-col gap-5 sm:mb-10 md:flex-row md:items-end md:justify-between">
