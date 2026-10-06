@@ -10,7 +10,7 @@ const metrics = [
   { value: "UK", label: "Based" },
 ];
 
-const bars = [5, 8, 12, 16, 20, 25, 30, 38, 45, 52, 60, 68, 77, 87, 97, 108, 120, 133, 148, 164, 181, 201];
+const bars = [18, 21, 25, 29, 34, 39, 46, 54, 62, 71, 80, 89, 99, 110, 121, 133, 145, 158, 171, 183, 193, 201];
 
 export default function AboutFicode() {
   const reducedMotion = useReducedMotion();
@@ -32,18 +32,6 @@ export default function AboutFicode() {
     }),
     [isInView, reducedMotion],
   );
-  const [barSprings] = useTrail(
-    bars.length,
-    (index) => ({
-      from: { height: reducedMotion ? bars[index] : 4 },
-      to: { height: reducedMotion || isInView ? bars[index] : 4 },
-      delay: index * 28,
-      immediate: reducedMotion || !isInView,
-      config: { mass: 1, tension: 190, friction: 28 },
-    }),
-    [isInView, reducedMotion],
-  );
-
   return (
     <section id="about-ficode" className="site-section-spacing relative isolate overflow-hidden bg-white">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(ellipse_at_50%_-30%,rgba(244,122,0,.2),transparent_68%),radial-gradient(ellipse_at_75%_0%,rgba(255,166,77,.18),transparent_43%)]" />
@@ -85,11 +73,11 @@ export default function AboutFicode() {
             <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1.5 text-[9px] font-semibold text-emerald-700"><TrendingUp size={12}/> Growing together</span>
           </div>
           <div aria-hidden="true" className="relative flex h-[210px] items-end justify-between gap-1 overflow-hidden rounded-xl bg-[linear-gradient(to_bottom,rgba(148,163,184,.12)_1px,transparent_1px)] bg-[length:100%_25%] px-1 pt-2 sm:h-[220px] sm:gap-3 sm:px-3">
-            {bars.map((_, index) => (
-              <animated.span
+            {bars.map((height, index) => (
+              <span
                 key={index}
-                className="w-1 shrink-0 rounded-t-full bg-gradient-to-t from-orange-500/10 via-orange-500/55 to-orange-600 shadow-[0_0_16px_rgba(234,88,12,.14)] sm:w-[5px]"
-                style={{ height: barSprings[index].height }}
+                className="block w-1 shrink-0 rounded-t-full bg-gradient-to-t from-orange-500/10 via-orange-500/55 to-orange-600 shadow-[0_0_16px_rgba(234,88,12,.14)] sm:w-[5px]"
+                style={{ height: `${height}px` }}
               />
             ))}
           </div>
