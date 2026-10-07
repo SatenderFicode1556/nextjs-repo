@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 import { headers } from "next/headers";
+import { servicePages } from "../lib/service-pages";
+import { technologyPages } from "../lib/technology-pages";
+import { industryPages } from "../lib/industry-pages";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const requestHeaders = await headers();
@@ -10,7 +13,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const protocol = requestHeaders.get("x-forwarded-proto") ?? "https";
   const baseUrl = `${protocol}://${host}`;
 
-  return ["", "/about", "/services", "/industries", "/contact"].map((path) => ({
+  const routes = ["", "/about", "/services", "/technologies", "/industries", "/contact"];
+  routes.push(...servicePages.map(({ slug }) => `/services/${slug}`));
+  routes.push(...technologyPages.map(({ slug }) => `/technologies/${slug}`));
+  routes.push(...industryPages.map(({ slug }) => `/industries/${slug}`));
+
+  return routes.map((path) => ({
     url: `${baseUrl}${path}`,
   }));
 }
