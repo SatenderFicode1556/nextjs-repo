@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, Clock3, Mail, MapPin, MessageCircle, Phone } 
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ContactForm from "../../components/ContactForm";
+import contactVisual from "../../../public/video/common/img6.jpg";
 import awsBadge from "../../../public/Images/Landing/Header/first-img-header.png";
 import isoBadge from "../../../public/Images/Landing/Header/second-img-header.png";
 import chamberBadge from "../../../public/Images/Landing/Header/forth-img-header.png";
@@ -44,13 +45,13 @@ export default function ContactPage() {
 
             <div className="relative mx-auto w-full max-w-[560px]">
               <div className="group relative h-[230px] overflow-hidden rounded-[1.75rem] border border-white/15 bg-[#13294a] shadow-[0_30px_80px_rgba(0,0,0,.32)] sm:h-[290px] lg:h-[340px]">
-                <video className="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-700 group-hover:scale-[1.03]" src="/video/header/ai.mp4" autoPlay muted loop playsInline preload="none" aria-hidden="true" />
+                <video className="absolute inset-0 h-full w-full object-cover opacity-75 transition duration-700 group-hover:scale-[1.03]" src="/video/header/video2.mp4" poster={contactVisual.src} autoPlay muted loop playsInline preload="none" aria-hidden="true" />
                 <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(5,16,36,.28),rgba(5,16,36,.06)_48%,rgba(5,16,36,.55))]" />
                 <div className="absolute inset-x-0 top-0 flex items-start justify-between p-5 sm:p-6"><span className="rounded-full border border-white/20 bg-[#071326]/55 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[.18em] text-white/90 backdrop-blur">Ideas into impact</span><span className="grid h-11 w-11 place-items-center rounded-2xl border border-white/20 bg-white/10 text-cyan-200 backdrop-blur"><MessageCircle size={21}/></span></div>
                 <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/15 bg-[#071326]/65 p-4 backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:p-5"><p className="text-[10px] font-bold uppercase tracking-[.2em] text-cyan-200">A good place to begin</p><p className="mt-2 max-w-sm text-lg font-semibold leading-snug text-white sm:text-xl">Share the challenge. We&apos;ll bring the right people to the conversation.</p></div>
               </div>
-              <div className="mt-3 grid grid-cols-3 gap-2 sm:absolute sm:-bottom-6 sm:left-6 sm:right-6 sm:mt-0 sm:gap-3">
-                {badges.map(({ src, alt }) => <div key={alt} className="flex h-[58px] items-center justify-center rounded-xl border border-slate-200 bg-white px-2 shadow-lg shadow-slate-950/10 sm:h-[66px] sm:rounded-2xl"><Image src={src} alt={alt} className="h-full max-h-12 w-full object-contain" /></div>)}
+              <div className="mt-3 grid grid-cols-3 gap-2 sm:mt-4 sm:gap-3">
+                {badges.map(({ src, alt }) => <div key={alt} className="flex h-[58px] items-center justify-center rounded-xl border border-white/70 bg-white px-2 shadow-lg shadow-slate-950/10 sm:h-[66px] sm:rounded-2xl"><Image src={src} alt={alt} className="h-full max-h-12 w-full object-contain" /></div>)}
               </div>
             </div>
           </div>

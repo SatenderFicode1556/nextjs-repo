@@ -1,6 +1,5 @@
 import Image, { type StaticImageData } from "next/image";
 import type { DetailPageData } from "../lib/service-pages";
-import InnerPageHero from "./InnerPageHero";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import {
@@ -67,6 +66,52 @@ function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: stri
   );
 }
 
+function DetailHero({ data }: { data: DetailPageData }) {
+  const blueprint = [
+    { label: "People", value: data.audience, icon: UsersRound },
+    { label: "Focus", value: data.focus, icon: Compass },
+    { label: "Build", value: data.offerings[0], icon: Layers3 },
+  ];
+  return (
+    <section className="relative isolate overflow-hidden bg-[#09152d] text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_82%_32%,rgba(34,155,187,.2),transparent_30%),radial-gradient(ellipse_at_10%_100%,rgba(244,122,0,.12),transparent_38%)]" />
+      <div className="site-container relative grid min-h-[510px] items-center gap-10 py-14 sm:py-16 lg:min-h-[570px] lg:grid-cols-[1.05fr_.95fr] lg:gap-14 lg:py-20">
+        <div className="max-w-2xl">
+          <p className="section-eyebrow !text-cyan-300">{data.eyebrow}</p>
+          <h1 className="mt-5 text-balance text-5xl font-semibold leading-[1.05] tracking-[-.055em] sm:text-6xl lg:text-7xl">{data.headline}<br/><span className="text-cyan-300">{data.highlight}</span></h1>
+          <p className="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">{data.description}</p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-[var(--brand-accent)] px-6 py-3.5 text-sm font-bold text-[var(--brand-on-accent)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-accent-600)]">Talk to our team <ArrowRight size={16}/></a>
+            <a href="#capabilities" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3.5 text-sm font-semibold text-white/90 transition hover:border-white/50 hover:bg-white/[.06]">Explore capabilities <Layers3 size={15}/></a>
+          </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-[560px]">
+          <div className="absolute -inset-5 rounded-[2rem] border border-cyan-200/[.08]" />
+          <div className="relative overflow-hidden rounded-[1.6rem] border border-white/15 bg-white/[.07] p-5 shadow-[0_30px_90px_rgba(0,0,0,.28)] backdrop-blur-sm sm:p-7">
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div><p className="text-[10px] font-bold uppercase tracking-[.2em] text-cyan-200">A solution shaped around you</p><p className="mt-1 text-sm font-semibold text-white">{data.title}</p></div>
+              <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[.06] text-cyan-200"><Sparkles size={18}/></span>
+            </div>
+            <div className="mt-5 space-y-3">
+              {blueprint.map(({ label, value, icon: Icon }, index) => <article key={label} className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#071326]/55 p-3.5 sm:p-4">
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-cyan-300/10 text-cyan-200"><Icon size={17}/></span>
+                <div className="min-w-0 flex-1"><p className="text-[9px] font-bold uppercase tracking-[.17em] text-white/45">0{index + 1} / {label}</p><p className="mt-1 line-clamp-1 text-sm font-medium text-white/90">{value}</p></div>
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--brand-accent)]" />
+              </article>)}
+            </div>
+            <div className="mt-5 flex items-center justify-between gap-3 border-t border-white/10 pt-4">
+              <span className="text-[10px] font-semibold uppercase tracking-[.16em] text-white/45">From first idea to lasting value</span>
+              <span className="flex items-center gap-1.5" aria-label="Three connected steps"><i className="h-1.5 w-6 rounded-full bg-cyan-300"/><i className="h-1.5 w-6 rounded-full bg-cyan-300/50"/><i className="h-1.5 w-6 rounded-full bg-white/20"/></span>
+            </div>
+          </div>
+          <div className="absolute -right-2 -top-4 -z-10 h-24 w-24 rounded-full border border-cyan-200/20 sm:-right-5 sm:-top-6 sm:h-32 sm:w-32" />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function QuickFacts({ data }: { data: DetailPageData }) {
   const facts = [
     { label: "Core capabilities", value: `${data.offerings.length} focus areas`, detail: "Combined to fit the work" },
@@ -74,7 +119,7 @@ function QuickFacts({ data }: { data: DetailPageData }) {
     { label: "Designed for", value: "Your organisation", detail: data.audience },
   ];
   return (
-    <section className="site-container -mt-7 relative z-10">
+    <section id="overview" className="site-container relative z-10 -mt-7 scroll-mt-32">
       <div className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_20px_60px_rgba(15,23,42,.08)] sm:grid-cols-3">
         {facts.map((fact, index) => <article key={fact.label} className={`p-5 sm:p-6 ${index ? "border-t border-slate-200 sm:border-l sm:border-t-0" : ""}`}>
           <p className="text-[10px] font-bold uppercase tracking-[.16em] text-sky-700">{fact.label}</p>
@@ -86,10 +131,29 @@ function QuickFacts({ data }: { data: DetailPageData }) {
   );
 }
 
+function PageNavigator() {
+  const links = [
+    ["What we do", "capabilities"],
+    ["Use cases", "use-cases"],
+    ["Our approach", "our-approach"],
+    ["Benefits", "benefits"],
+    ["FAQs", "faqs"],
+  ];
+  return (
+    <nav aria-label="On this page" className="sticky top-[72px] z-20 border-y border-slate-200/80 bg-white/95 backdrop-blur-md">
+      <div className="site-container flex items-center gap-2 overflow-x-auto py-2.5">
+        <span className="mr-1 hidden shrink-0 text-[10px] font-bold uppercase tracking-[.14em] text-slate-400 sm:block">On this page</span>
+        {links.map(([label, id], index) => <a key={id} href={`#${id}`} className="inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-2 text-xs font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700"><span className="text-[9px] font-bold text-orange-600">0{index + 1}</span>{label}</a>)}
+        <a href="/contact" className="ml-auto hidden shrink-0 items-center gap-1.5 rounded-full bg-[#09152d] px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-800 sm:inline-flex">Talk to us <ArrowRight size={13}/></a>
+      </div>
+    </nav>
+  );
+}
+
 function OverviewSection({ data }: { data: DetailPageData }) {
   const image = imageFor(data.slug);
   return (
-    <section className="site-container py-16 sm:py-20 lg:py-24">
+    <section id="overview-story" className="site-container scroll-mt-36 py-16 sm:py-20 lg:py-24">
       <div className="grid items-center gap-9 lg:grid-cols-[1fr_.9fr] lg:gap-16">
         <div>
           <SectionHeading eyebrow={`A closer look at ${data.title}`} title="Start with the problem worth solving." copy={data.description} />
@@ -115,7 +179,7 @@ function OverviewSection({ data }: { data: DetailPageData }) {
 
 function VideoSpotlight({ data }: { data: DetailPageData }) {
   return (
-    <section className="site-container pb-16 sm:pb-20 lg:pb-24">
+    <section id="video-story" className="site-container scroll-mt-36 pb-16 sm:pb-20 lg:pb-24">
       <div className="group relative isolate min-h-[300px] overflow-hidden rounded-[1.75rem] bg-[#09152d] text-white sm:min-h-[360px]">
         <video className="absolute inset-0 -z-10 h-full w-full object-cover opacity-45 transition duration-700 group-hover:scale-[1.02]" src={videoFor(data.slug)} poster={data.image.src} autoPlay muted loop playsInline preload="none" aria-hidden="true" />
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(100deg,rgba(5,16,36,.96),rgba(5,16,36,.7)_55%,rgba(5,16,36,.28))]" />
@@ -132,7 +196,7 @@ function VideoSpotlight({ data }: { data: DetailPageData }) {
 
 function CapabilityGrid({ data }: { data: DetailPageData }) {
   return (
-    <section className="site-surface-muted py-16 sm:py-20 lg:py-24">
+    <section id="capabilities" className="site-surface-muted scroll-mt-36 py-16 sm:py-20 lg:py-24">
       <div className="site-container">
         <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><SectionHeading eyebrow="What we offer" title="The capabilities to move forward." copy={`A focused mix of expertise, shaped around ${data.focus}.`} /><p className="max-w-sm text-sm leading-6 text-slate-600">Choose the work that fits your priorities today, with a foundation that can grow when you are ready.</p></div>
         <div className="mt-9 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -159,7 +223,7 @@ function UseCases({ data }: { data: DetailPageData }) {
     ][index],
   }));
   return (
-    <section className="site-container py-16 sm:py-20 lg:py-24">
+    <section id="use-cases" className="site-container scroll-mt-36 py-16 sm:py-20 lg:py-24">
       <SectionHeading eyebrow="Where it helps" title="Useful in the moments that matter." copy={`Explore common starting points for ${data.title.toLowerCase()} work. We shape each one to the context, constraints and goals of your team.`} />
       <div className="mt-9 grid gap-4 md:grid-cols-2">
         {cases.map(({ offering, number, context }) => <article key={offering} className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6">
@@ -178,7 +242,7 @@ function DeliverySection({ data }: { data: DetailPageData }) {
     "Use feedback and service insight to improve the solution as your organisation grows.",
   ];
   return (
-    <section className="site-surface-muted py-16 sm:py-20 lg:py-24"><div className="site-container">
+    <section id="our-approach" className="site-surface-muted scroll-mt-36 py-16 sm:py-20 lg:py-24"><div className="site-container">
       <SectionHeading eyebrow="How we work" title="A clear path from first conversation to lasting value." copy="Keep the work close to your team, with decisions and progress visible at each stage." />
       <ol className="mt-9 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">{deliverySteps.map(({ title, icon: Icon }, index) => <li key={title} className="rounded-3xl border border-slate-200 bg-white p-6">
         <div className="flex items-center justify-between"><span className="grid h-11 w-11 place-items-center rounded-2xl bg-orange-50 text-orange-700"><Icon size={20}/></span><span className="text-xs font-bold tracking-[.18em] text-slate-300">0{index + 1}</span></div>
@@ -195,7 +259,7 @@ function ConnectionSection({ data }: { data: DetailPageData }) {
     { title: "A service that evolves", icon: Layers3, text: `Make the foundations maintainable so the experience can improve with your organisation.` },
   ];
   return (
-    <section className="site-container py-16 sm:py-20 lg:py-24">
+    <section id="connected-design" className="site-container scroll-mt-36 py-16 sm:py-20 lg:py-24">
       <div className="grid gap-9 lg:grid-cols-[.8fr_1.2fr] lg:items-center lg:gap-14">
         <SectionHeading eyebrow="Connected by design" title="Make each part work better together." copy={`A successful ${data.title.toLowerCase()} solution connects the user experience to the systems and information that support it.`} />
         <div className="grid gap-3">{parts.map(({ title, icon: Icon, text }, index) => <article key={title} className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5">
@@ -209,7 +273,7 @@ function ConnectionSection({ data }: { data: DetailPageData }) {
 function ImageFeature({ data }: { data: DetailPageData }) {
   const image = imageFor(data.slug + "ficode-feature");
   return (
-    <section className="site-container pb-16 sm:pb-20 lg:pb-24">
+    <section id="in-practice" className="site-container scroll-mt-36 pb-16 sm:pb-20 lg:pb-24">
       <div className="grid overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white lg:grid-cols-2">
         <div className="relative min-h-[270px] bg-slate-900 sm:min-h-[360px]"><Image src={image} alt={`Digital technology supporting ${data.title.toLowerCase()}`} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" /></div>
         <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-12"><p className="section-eyebrow">Designed for daily work</p><h2 className="section-heading mt-4">Technology that fits the way your team works.</h2><p className="mt-4 text-sm leading-7 text-slate-600">Every organisation starts from a different place. We account for the tools you already use, the people responsible for the service and the practical demands of {data.focus}.</p><ul className="mt-6 space-y-3">{["Clear ownership and next steps", "A considered fit with existing tools", "Room to adapt as needs change"].map((item) => <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-slate-700"><Check size={16} className="text-emerald-600"/>{item}</li>)}</ul></div>
@@ -226,7 +290,7 @@ function BenefitsSection({ data }: { data: DetailPageData }) {
     { title: "Ready to evolve", text: `Start with a practical scope and leave room to improve as needs around ${data.title.toLowerCase()} change.` },
   ];
   return (
-    <section className="site-surface-muted py-16 sm:py-20 lg:py-24"><div className="site-container">
+    <section id="benefits" className="site-surface-muted scroll-mt-36 py-16 sm:py-20 lg:py-24"><div className="site-container">
       <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-start lg:gap-14">
         <SectionHeading eyebrow="The value" title="A better fit for the work ahead." copy="Make progress now while building a stronger foundation for what comes next." />
         <div className="grid gap-3 sm:grid-cols-2">{benefits.map(({ title, text }) => <article key={title} className="rounded-2xl border border-slate-200 bg-white p-5"><h3 className="text-sm font-semibold text-slate-900">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{text}</p></article>)}</div>
@@ -253,7 +317,7 @@ function FAQSection({ data }: { data: DetailPageData }) {
     { question: "Can we start with a smaller project?", answer: "Yes. A focused first phase can help validate priorities, understand dependencies and give your team a useful foundation for deciding what to do next." },
   ];
   return (
-    <section className="site-surface-muted py-16 sm:py-20 lg:py-24"><div className="site-container grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:gap-14">
+    <section id="faqs" className="site-surface-muted scroll-mt-36 py-16 sm:py-20 lg:py-24"><div className="site-container grid gap-8 lg:grid-cols-[.7fr_1.3fr] lg:gap-14">
       <SectionHeading eyebrow="Frequently asked questions" title="Good to know before you begin." copy={`A few useful answers about getting started with ${data.title.toLowerCase()}.`} />
       <div className="space-y-3">{faqs.map(({ question, answer }) => <details key={question} className="group rounded-2xl border border-slate-200 bg-white px-5 py-4 open:border-orange-200 sm:px-6"><summary className="cursor-pointer text-sm font-semibold leading-6 text-slate-900 marker:text-orange-600">{question}</summary><p className="mt-3 border-t border-slate-100 pt-3 text-sm leading-6 text-slate-600">{answer}</p></details>)}</div>
     </div></section>
@@ -272,8 +336,9 @@ export default function SolutionDetailPage({ data }: { data: DetailPageData }) {
       <a href="#main-content" className="sr-only focus:not-sr-only">Skip to content</a>
       <Navbar />
       <main id="main-content">
-        <InnerPageHero eyebrow={data.eyebrow} title={data.headline} accent={data.highlight} description={data.description} image={data.image} imageAlt={data.imageAlt} />
+        <DetailHero data={data} />
         <QuickFacts data={data} />
+          <PageNavigator />
         <OverviewSection data={data} />
         <VideoSpotlight data={data} />
         <CapabilityGrid data={data} />
